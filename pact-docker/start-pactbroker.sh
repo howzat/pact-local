@@ -6,7 +6,7 @@
 
 running=`docker ps -a -f name="${PACT_BROKER_CONTAINER_NAME}" -q`
 
-if [ -z $running ]; then
+if [ -z "$running" ]; then
 
   echo "Starting docker container [$PACT_BROKER_CONTAINER_NAME] ..."
 
