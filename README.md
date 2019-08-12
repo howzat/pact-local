@@ -10,14 +10,14 @@ Running
  -
  The directory currently named pact-docker holds a Docker compose file that starts the requisite Postgres and Pact Broker containers.
  
- Alternatively the `start_docker.sh` can be run. The pact broker is started on the default `http://localhost:80`
- 
 ```
 cd pact-docker
 docker-compose up
 docker ps
 ```
 
+ Alternatively the `start_docker.sh` can be run on it's own. The pact broker is started on the default `http://localhost:80`
+ 
 *Postgres Queries using Pygmy CLI*
 
 Docker Compose starts a new network when bringing the containers online. To link a new container you need to know the name of that network.
