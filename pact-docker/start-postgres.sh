@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-#!/bin/bash
-
 . docker-common.sh
 . ./build-pact-postgres-image.sh
 
-running=`docker ps -a -f name="$PACT_BROKER_CONTAINERNAME" -q`
+running=`docker ps -a -f name="$POSTGRES_CONTAINER_NAME" -q`
 
-if [ -z $running ]; then
+if [ -z "$running" ]; then
 
     echo "Running docker container [$POSTGRES_CONTAINER_NAME]"
 
