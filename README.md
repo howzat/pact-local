@@ -16,17 +16,13 @@ The pact broker is started on the default `http://localhost:80`
  
 *Postgres Queries using Pygmy CLI*
 
-Docker Compose starts a new network when bringing the containers online. To link a new container you need to know the name of that network.
-
-Running `docker network ls` will show all the networks known to Docker. You can identify which applies to this project since the folder `docker-compose` is run from will form part of the network name.
+The script will print all the running containers once they are started. The nicest way to examine the Postgres DB (should you need to) is to use `pygmy`. 
 
 For example: 
 ```
-NETWORK ID          NAME                          DRIVER              SCOPE
-b7f1da411060        pact-docker-compose_default   bridge              local
-171673d3c506        pact-docker_default           bridge              local
+CONTAINER ID        IMAGE               ...    PORTS                         NAMES
+ab516ce4d804        dius/pact-broker    ...    0.0.0.0:80->80/tcp, 443/tcp   pact-broker
+9e025dab6377        pact-postgres       ...    5432/tcp                      pact-postgres
 
-
-
-docker run -it --rm --link pactbroker-db:postgres pygmy/pgcli
+docker run -it --rm --link pact-postgres:postgres pygmy/pgcli
 ```
