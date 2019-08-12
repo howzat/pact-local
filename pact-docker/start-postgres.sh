@@ -12,7 +12,7 @@ if [ -z "$running" ]; then
     docker run --name $POSTGRES_IMAGE_NAME \
     -e POSTGRES_PASSWORD=$POSTGRES_PASSWORD \
     -e POSTGRES_USER=$POSTGRES_USER \
-    -e PGDATA=$PGDATA \
+    -e PGDATA="$PGDATA" \
     -v $PGDATA:/var/lib/postgresql/data \
     -d $POSTGRES_CONTAINER_NAME;
 

@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
 
-export WORKSPACE=/Users/benoit/projects
-
 #--- Postgres ----
 export POSTGRES_IMAGE_NAME=pact-postgres
 export POSTGRES_CONTAINER_NAME=pact-postgres
 
 export POSTGRES_PASSWORD=postgres
 export POSTGRES_USER=postgres
-export PGDATA=$WORKSPACE/githubber/pact-docker/postgresql/data/pgdata
+export PGDATA="`pwd`/postgresql/data/pgdata"
 export POSTGRES_PORT=5454
 
 export PACT_BROKER_DATABASE_ADAPTER=postgres
